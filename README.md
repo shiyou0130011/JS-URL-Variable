@@ -14,27 +14,35 @@ This is the code I wrote for my another project [paginate-blogger-posts](https:/
 
 ### Parse Full URL
 	
-	var url = new URLVariables("http://example.com/?var1=A&var2=B&var3=https%3A%2F%2Fexample.com");
-	console.log(url);	// will log an object: 
-				// {
-				//	"var1":"A",
-				//	"var2":"B",
-				//	"var3":"https://example.com"
-				// }
+	<script src="/The/Path/of/The/File/url_veriable.js"></script>
+	<script>
+	var urlVariables = new URLVariables("http://example.com/?var1=A&var2=B&var3=https%3A%2F%2Fexample.com");
+	console.log(urlVariables);	// will log an object: 
+					// {
+					//	"var1":"A",
+					//	"var2":"B",
+					//	"var3":"https://example.com"
+					// }
+	</script>
 
 ## Parse Object
 
-	var url = new URLVariables({"var1":"A","var2":"B","var3":"https://example.com"});
-	console.log(url);	// will log an object: 
-				// {
-				//	"var1":"A",
-				//	"var2":"B",
-				//	"var3":"https://example.com"
-				// }
+	<script src="/The/Path/of/The/File/url_veriable.js"></script>
+	<script>
+	var urlVariables = new URLVariables({"var1":"A","var2":"B","var3":"https://example.com"});
+	console.log(urlVariables);	// will log an object: 
+					// {
+					//	"var1":"A",
+					//	"var2":"B",
+					//	"var3":"https://example.com"
+					// }
+	</script>
 
 ## Get Query String
 
-	var url = new URLVariables({"var1":"A","var2":"B","var3":"https://example.com"});
-	console.log(url.toString());	// will log a String: "var1=A&var2=B&var3=https%3A%2F%2Fexample.com"
-
+	<script src="/The/Path/of/The/File/url_veriable.js"></script>
+	<script>
+	var urlVariables = new URLVariables({"var2":"B","var1":"A","var3":"https://example.com"});
+	console.log(urlVariables.toString());	// will log a String: "var1=A&var2=B&var3=https%3A%2F%2Fexample.com"
+	</script>
 	
