@@ -2,9 +2,14 @@
 
 JS-URL-Variable is a javascript code used for parse url query string into an object.
 
-## Table of contents
+## Table of Contents
 
-[toc]
+ - [About](#about)
+ - [Example](#example)
+	 - [Parse Full URL](#parse-full-url)
+	 - [Parse Object](#parse-object)
+	 - [Get Query String](#get-query-string)
+
 
 ##  About
 
@@ -25,11 +30,11 @@ This is the code I wrote for my another project [paginate-blogger-posts](https:/
 					// }
 	</script>
 
-## Parse Object
+### Parse Object
 
 	<script src="/The/Path/of/The/File/url_variable.js"></script>
 	<script>
-	var urlVariables = new URLVariables({"var1":"A","var2":"B","var3":"https://example.com"});
+	var urlVariables = new URLVariables({"var1":"A", "var2":"B", "var3":"https://example.com"});
 	console.log(urlVariables);	// will log an object: 
 					// {
 					//	"var1":"A",
@@ -38,11 +43,11 @@ This is the code I wrote for my another project [paginate-blogger-posts](https:/
 					// }
 	</script>
 
-## Get Query String
+### Get Query String
 
 	<script src="/The/Path/of/The/File/url_variable.js"></script>
 	<script>
-	var urlVariables = new URLVariables({"var2":"B","var1":"A","var3":"https://example.com"});
+	var urlVariables = new URLVariables({"var2":"B", "var1":"A", "var3":"https://example.com"});
 	console.log(urlVariables.toString());	// will log a String: "var1=A&var2=B&var3=https%3A%2F%2Fexample.com"
 	</script>
 	
