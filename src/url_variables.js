@@ -1,5 +1,11 @@
 /**
- * @param variables {String|Object}
+ * @author Tzuyang Tsai (shiyou0130011)
+ * @license Apache-2.0
+ */
+
+/**
+ * @constructor
+ * @param variables {String|Object} An url string or an object
  */
 function URLVariables(variables){
 	if(!(this instanceof URLVariables)){
@@ -17,7 +23,8 @@ function URLVariables(variables){
 	}
 }
 /**
- *
+ * Converts the url string to the specified URLVariables object.
+ * @return {URLVariables}	this
  */
 URLVariables.prototype.decode = function(source){
 	if(typeof source != "string")
@@ -31,6 +38,10 @@ URLVariables.prototype.decode = function(source){
 	}
 	return this
 }
+
+/**
+ * @return The string containing all variables, in the MIME content encoding <i>application/x-www-form-urlencoded</i>.
+ */
 URLVariables.prototype.toString = function(){
 	var urlvar_keys = []
 	for(var i in this){
