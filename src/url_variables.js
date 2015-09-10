@@ -60,7 +60,7 @@ URLVariables.prototype.toString = function(){
 		var key = urlvar_keys[i]
 		this[key].sort()
 		this[key].forEach(function(val, index, array){
-			l.push(encodeURIComponent(urlvar_keys[i]) + "=" + encodeURIComponent(val))
+			l.push(encodeURIComponent(key) + "=" + encodeURIComponent(val))
 		})
 	}
 	return l.join("&")
