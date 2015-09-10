@@ -24,8 +24,7 @@ function URLVariables(variables){
 }
 /**
  * Converts the url string to the specified URLVariables object.
- * @param	{String}		source	
- * @return	{URLVariables}		this
+ * @return {URLVariables}	this
  */
 URLVariables.prototype.decode = function(source){
 	if(typeof source != "string")
@@ -35,22 +34,11 @@ URLVariables.prototype.decode = function(source){
 	var urlvar = url[url.length-1].split("&");
 	for(var i in urlvar){
 		var data = urlvar[i].split("=")
-		var name = data[0], value = data[1]
-		if(name.indexOf("[") > 0 && name.indexOf("]") > 0 && name.indexOf("]") > name.indexOf("[")){
-			// it is an Array
-			var blockIndex = [name.indexOf("["), name.indexOf("]")]
-			var index = name.substr(blockIndex[0] + 1, blockIndex[1]-blockIndex[0] - 1)
-			name = decodeURIComponent(name.substr(0, blockIndex[0]))
-			this[name] = (this[name] instanceof Array)? this[name]: []
-			
-			if(index){
-				this[name][index] = value
-			}else{
-				this[name].push(value)
-			}
-			
+		var name = decodeURIComponent(data[0]), value = decodeURIComponent(data[1])
+		if(!(this[name] instanceof Array)){
+			this[name] = [value]
 		}else{
-			this[decodeURIComponent(name)] = decodeURIComponent(value);
+			this[name].push(value);
 		}
 	}
 	return this
@@ -69,17 +57,11 @@ URLVariables.prototype.toString = function(){
 
 	var l = []
 	for(i in urlvar_keys){
-		var key = urlvar_keys[i], value = this[key]
-		key = encodeURIComponent(key)
-		if(typeof value != "object"){
-			l.push(key + "=" + encodeURIComponent(value))
-		}else{
-			var result_arr = []
-			for(var i in value){
-				result_arr.push(key + "[" + i + "]=" + encodeURIComponent(value[i]))
-			}
-			l.push(result_arr.join("&"))
-		}
+		var key = urlvar_keys[i]
+		this[key].sort()
+		this[key].forEach(function(val, index, array){
+			l.push(encodeURIComponent(urlvar_keys[i]) + "=" + encodeURIComponent(val))
+		})
 	}
 	return l.join("&")
 }
