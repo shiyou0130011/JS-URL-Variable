@@ -31,9 +31,9 @@ This is the code I wrote for my another project [paginate-blogger-posts](https:/
 	var urlVariables = new URLVariables("http://example.com/?var1=A&var2=B&var3=https%3A%2F%2Fexample.com");
 	console.log(urlVariables);	// will log an object: 
 					// {
-					//	"var1":"A",
-					//	"var2":"B",
-					//	"var3":"https://example.com"
+					//	"var1": ["A"],
+					//	"var2": ["B"],
+					//	"var3": ["https://example.com"]
 					// }
 	</script>
 

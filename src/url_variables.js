@@ -17,7 +17,19 @@ function URLVariables(variables){
 			break
 		case "object":
 			for(var i in variables){
-				this[i] = variables[i];
+				if(this[i]){
+					if(!(this[i] instanceof Array)){
+						this[i] = [this[i]]
+					}
+				}else{
+					this[i] = []
+				}
+				
+				if(variables[i] instanceof Array){
+					[].push.apply(this[i], variables[i]);
+				}else{
+					this[i].push(variables[i])
+				}
 			}
 			break
 	}
@@ -45,7 +57,7 @@ URLVariables.prototype.decode = function(source){
 }
 
 /**
- * @return The string containing all variables, in the MIME content encoding <i>application/x-www-form-urlencoded</i>.
+ * @return {String} The string containing all variables, in the MIME content encoding <i>application/x-www-form-urlencoded</i>.
  */
 URLVariables.prototype.toString = function(){
 	var urlvar_keys = []
