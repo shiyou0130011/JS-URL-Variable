@@ -1,4 +1,4 @@
-# JS-URL-Variable
+# JS-URL-Variable	[![Apache License 2.0](http://img.shields.io/badge/license-apache2-red.svg)](http://www.apache.org/licenses/)
 
 JS-URL-Variable is a javascript code used for parse url query string into an object.
 
