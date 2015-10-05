@@ -11,13 +11,38 @@ function URLVariables(variables){
 	if(!(this instanceof URLVariables)){
 		return new URLVariables(variables)
 	}
-	switch(typeof variables){
+	this.decode(variables)
+}
+/**
+ * Converts the url string or object to the specified URLVariables object.
+ * @param {String|Object}	An url string or an object
+ * @example var u = new URLVariables;
+ *          u.decode("a=1&b=2&c=3&a=2")
+ *          u.decode({a: [1, 2], b: 2, c: 3})
+ * @return {URLVariables}	this
+ */
+URLVariables.prototype.decode = function(source){
+	switch(typeof source != "string"){
 		case "string":
-			this.decode(variables)
+			var url = source.split("?");
+			var urlvar = url[url.length-1].split("&");
+			for(var i in urlvar){
+				var data = urlvar[i].split("=")
+				var name = decodeURIComponent(data[0]), value = decodeURIComponent(data[1])
+				if(!(this[name] instanceof Array)){
+					if(this[name]){
+						this[name] = [this[name]]
+					}
+					this[name] = [value]
+					
+				}else{
+					this[name].push(value);
+				}
+			}
 			break
 		case "object":
-			for(var i in variables){
-				if(this[i]){
+			for(var i in source){
+				if(this[i] != undefined){
 					if(!(this[i] instanceof Array)){
 						this[i] = [this[i]]
 					}
@@ -25,33 +50,12 @@ function URLVariables(variables){
 					this[i] = []
 				}
 				
-				if(variables[i] instanceof Array){
+				if(source[i] instanceof Array){
 					[].push.apply(this[i], variables[i]);
 				}else{
-					this[i].push(variables[i])
+					this[i].push(source[i])
 				}
 			}
-			break
-	}
-}
-/**
- * Converts the url string to the specified URLVariables object.
- * @return {URLVariables}	this
- */
-URLVariables.prototype.decode = function(source){
-	if(typeof source != "string")
-		return this
-
-	var url = source.split("?");
-	var urlvar = url[url.length-1].split("&");
-	for(var i in urlvar){
-		var data = urlvar[i].split("=")
-		var name = decodeURIComponent(data[0]), value = decodeURIComponent(data[1])
-		if(!(this[name] instanceof Array)){
-			this[name] = [value]
-		}else{
-			this[name].push(value);
-		}
 	}
 	return this
 }
@@ -62,7 +66,7 @@ URLVariables.prototype.decode = function(source){
 URLVariables.prototype.toString = function(){
 	var urlvar_keys = []
 	for(var i in this){
-		if(typeof this[i] != "function")
+		if(typeof this[i] != "function" && !URLVariables.prototype[i])
 			urlvar_keys.push(i)
 	}
 	urlvar_keys.sort()
