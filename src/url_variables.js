@@ -22,7 +22,7 @@ function URLVariables(variables){
  * @return {URLVariables}	this
  */
 URLVariables.prototype.decode = function(source){
-	switch(typeof source != "string"){
+	switch(typeof source){
 		case "string":
 			var url = source.split("?");
 			var urlvar = url[url.length-1].split("&");
