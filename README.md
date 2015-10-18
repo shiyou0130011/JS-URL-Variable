@@ -29,12 +29,12 @@ This is the code I wrote for my another project [paginate-blogger-posts](https:/
 	<script src="/The/Path/of/The/File/url_variable.js"></script>
 	<script>
 	var urlVariables = new URLVariables("http://example.com/?var1=A&var2=B&var3=https%3A%2F%2Fexample.com");
-	console.log(urlVariables);	// will log an object: 
-					// {
-					//	"var1": ["A"],
-					//	"var2": ["B"],
-					//	"var3": ["https://example.com"]
-					// }
+	console.log(urlVariables);      // will log an object: 
+	                                // {
+	                                //	"var1": ["A"],
+	                                //	"var2": ["B"],
+	                                //	"var3": ["https://example.com"]
+	                                // }
 	</script>
 
 ### Parse Object
@@ -42,12 +42,12 @@ This is the code I wrote for my another project [paginate-blogger-posts](https:/
 	<script src="/The/Path/of/The/File/url_variable.js"></script>
 	<script>
 	var urlVariables = new URLVariables({"var1":"A", "var2":"B", "var3":"https://example.com"});
-	console.log(urlVariables);	// will log an object: 
-					// {
-					//	"var1":"A",
-					//	"var2":"B",
-					//	"var3":"https://example.com"
-					// }
+	console.log(urlVariables);      // will log an object: 
+	                                // {
+	                                //	"var1": ["A"],
+	                                //	"var2": ["B"],
+	                                //	"var3": ["https://example.com"]
+	                                // }
 	</script>
 
 ### Get Query String
@@ -57,4 +57,22 @@ This is the code I wrote for my another project [paginate-blogger-posts](https:/
 	var urlVariables = new URLVariables({"var2":"B", "var1":"A", "var3":"https://example.com"});
 	console.log(urlVariables.toString());	// will log a String: "var1=A&var2=B&var3=https%3A%2F%2Fexample.com"
 	</script>
+
+
+### Adding Variables
+
+	<script src="/The/Path/of/The/File/url_variable.js"></script>
+	<script>
+	var urlVariables = new URLVariables({"var1":"A", "var2":"B", "var3":"https://example.com"});
 	
+	urlVariables.decode("var1=A2")   	// add url string
+	urlVariables.decode({var2: "B2"})	// add an object
+	
+	console.log(urlVariables);      // will log an object: 
+	                                // {
+	                                //	"var1": ["A", "A2"],
+	                                //	"var2": ["B", "B2"],
+	                                //	"var3": ["https://example.com"]
+	                                // }
+	console.log(urlVariables.toString());	// will log a String: "var1=A&var1=A2&var2=B&var2=B2&var3=https%3A%2F%2Fexample.com"
+	</script>
