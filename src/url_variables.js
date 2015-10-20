@@ -7,8 +7,8 @@
  * @constructor
  * @param variables {String|Object} An url string or an object
  */
-function URLVariables(variables){
-	if(!(this instanceof URLVariables)){
+function URLVariables(variables) {
+	if (!(this instanceof URLVariables)) {
 		return new URLVariables(variables)
 	}
 	this.decode(variables)
@@ -17,20 +17,20 @@ function URLVariables(variables){
  * Converts the url string or object to the specified URLVariables object.
  * @param {String|Object}	An url string or an object
  * @example var u = new URLVariables;
- *          u.decode("a=1&b=2&c=3&a=2")
- *          u.decode({a: [1, 2], b: 2, c: 3})
+ *          u.decode("a=1&b=2&c=3&a=2");
+ *          u.decode({a: [1, 2], b: 2, c: 3});
  * @return {URLVariables}	this
  */
-URLVariables.prototype.decode = function(source){
-	switch(typeof source){
+URLVariables.prototype.decode = function (source) {
+	switch (typeof source) {
 		case "string":
 			var url = source.split("?");
 			var urlvar = url[url.length-1].split("&");
-			for(var i in urlvar){
+			for (var i in urlvar) {
 				var data = urlvar[i].split("=")
 				var name = decodeURIComponent(data[0]), value = decodeURIComponent(data[1])
-				if(!(this[name] instanceof Array)){
-					if(this[name]){
+				if (!(this[name] instanceof Array)) {
+					if (this[name]) {
 						this[name] = [this[name]]
 					}
 					this[name] = [value]
@@ -41,16 +41,16 @@ URLVariables.prototype.decode = function(source){
 			}
 			break
 		case "object":
-			for(var i in source){
-				if(this[i] != undefined){
-					if(!(this[i] instanceof Array)){
+			for(var i in source) {
+				if (this[i] != undefined) {
+					if (!(this[i] instanceof Array)) {
 						this[i] = [this[i]]
 					}
 				}else{
 					this[i] = []
 				}
 				
-				if(source[i] instanceof Array){
+				if (source[i] instanceof Array) {
 					[].push.apply(this[i], variables[i]);
 				}else{
 					this[i].push(source[i])
@@ -63,19 +63,23 @@ URLVariables.prototype.decode = function(source){
 /**
  * @return {String} The string containing all variables, in the MIME content encoding <i>application/x-www-form-urlencoded</i>.
  */
-URLVariables.prototype.toString = function(){
+URLVariables.prototype.toString = function () {
 	var urlvar_keys = []
-	for(var i in this){
-		if(typeof this[i] != "function" && !URLVariables.prototype[i])
+	for(var i in this) {
+		if (typeof this[i] != "function" && !URLVariables.prototype[i])
 			urlvar_keys.push(i)
 	}
 	urlvar_keys.sort()
 
 	var l = []
-	for(i in urlvar_keys){
+	for (i in urlvar_keys) {
 		var key = urlvar_keys[i]
+		if (!(this[key] instanceof Array)){
+			this[key] = [this[key]]
+		}
+		
 		this[key].sort()
-		this[key].forEach(function(val, index, array){
+		this[key].forEach(function(val, index, array) {
 			l.push(encodeURIComponent(key) + "=" + encodeURIComponent(val))
 		})
 	}
