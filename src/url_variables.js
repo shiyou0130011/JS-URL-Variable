@@ -51,7 +51,7 @@ URLVariables.prototype.decode = function (source) {
 				}
 				
 				if (source[i] instanceof Array) {
-					[].push.apply(this[i], variables[i]);
+					[].push.apply(this[i], source[i]);
 				}else{
 					this[i].push(source[i])
 				}
