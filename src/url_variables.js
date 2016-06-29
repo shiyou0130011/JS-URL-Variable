@@ -1,6 +1,5 @@
 /**
  * @author Tzuyang Tsai (shiyou0130011)
- * @version 1.1
  * @license Apache-2.0
  */
  
