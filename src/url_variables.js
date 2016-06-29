@@ -34,7 +34,7 @@ URLVariables.prototype.decode = function (source) {
 			}
 			
 			if(url.length > 0){
-				urlvar = url[url.length-1].split("&")
+				urlvar = url.split("&")
 			}else{
 				urlvar = {}
 			}
