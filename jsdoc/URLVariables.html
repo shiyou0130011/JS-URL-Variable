@@ -1,523 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
-		<title>Documentation</title>
-	</head>
-	<body id="class">
+<head>
+    <meta charset="utf-8">
+    <title>URLVariables - Documentation</title>
 
-		<header>
-			<div class="header">
-				<script type="text/javascript" src="js/jQuery.172.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	var header = $('.header'),
-		content = $('.content')
-		footer = $('footer')
-	;
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+</head>
+<body>
 
-	function mtn(str){
-		if(
-			'' === str
-			|| undefined === str
-			|| null === str
-		){
-			return 0;
-		}else{
-			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
-			if(isNaN(a)){
-				a = 0;
-			}
-			return a;
-		}
-	}
-	
-	function resize(){
-		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
-			availableWidth = $(window).width(),
-			contentOffsetH = mtn(content.css('borderTopWidth')) + 
-				mtn(content.css('marginTop')) +
-				mtn(content.css('paddingTop')) +
-				
-				mtn(content.css('paddingBottom')) +
-				mtn(content.css('marginBottom')) +
-				mtn(content.css('borderBottomWidth')),
-			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
-				mtn(content.css('marginLeft')) +
-				mtn(content.css('paddingLeft')) +
-				
-				mtn(content.css('paddingRight')) +
-				mtn(content.css('marginRight')) +
-				mtn(content.css('borderRightWidth'))
-		;
-		content.height(availableHeight - contentOffsetH);
-		content.width(availableWidth - contentOffsetW);
-	}
-	resize();
-	$(window).resize(resize);
-});
-</script>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
-<ul>
-	
-	<li><a href="class_index.html">Classes</a></li>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<li><a href="function_index.html">Methods/Functions</a></li>
-	
-	
-	<li><a href="file_index.html">Files</a></li>
-	<li><a href="doc-index.html">Index</a></li>
-</ul>
+<label for="nav-trigger" class="overlay"></label>
 
-<div id="title">
-	
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="URLVariables.html">URLVariables</a><ul class='methods'><li data-type='method'><a href="URLVariables.html#decode">decode</a></li><li data-type='method'><a href="URLVariables.html#toString">toString</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
 
-		API
-
-		
-</div>
-				<div class="type">Class</div>
-				<h1>
-					URLVariables
-				</h1>
-			</div>
-		</header>
-
-		<div class="content">
-
-			<div class="anchor_list">
-	<h2>Contents</h2>
-	<ul>
-		
-		
-		
-		
-		
-
-		
-
-		
-
-		
-
-		
-
-		
-		<li><a href="#methods">Methods</a></li>
-		
-
-			
-	</ul>
-</div>
-			
-			<!-- CLASS SIGNATURE -->
-			<p class="PrincipalTitle">
-				<span> </span>
-				<span>class </span>
-				<strong>
-					URLVariables
-				</strong>
-
-				
-
-				
-
-				
-			</p>
-
-
-			<!-- CLASS DESCRIPTION -->
-			
-
-
-			<!-- CLASS CONSTRUCTOR SUMMARY -->
-			<h2>
-				<a name='constructor'></a>
-				Constructor
-				<small><a href="#">Top</a></small>
-			</h2>
-			<table>
-				<tbody>
-					<tr>
-						<td class="type">&nbsp;</td>
-						<td class="last">
-							<a href="#URLVariables">URLVariables</a>
-							<span>(String | Object variables)</span>
-							
-						<td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-
-
-			<!-- CLASS REQUIRES -->
-
-			<!-- NAMESPACE SUB-NAMESPACES -->
-						
-
-			<!-- CLASS CONSTANTS SUMMARY -->
-			
-
-
-			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
-			
-
-			<!-- CLASS PROPERTIES SUMMARY -->
-			
-
-			<!-- CLASS STATIC METHODS SUMMARY -->
-			
-
-			<!-- CLASS METHODS SUMMARY -->
-			
-			<h2>
-				<a name='methods'></a>
-				Methods
-				<small><a href="#">Top</a></small>
-			</h2>
-			<table>
-  <tbody>
-  
+<div id="main">
+    
+    <h1 class="page-title">URLVariables</h1>
     
 
-    <tr  class="public">
-      <td class="type">
-      	<span>
-      	<a href="URLVariables.html" ><abbr title="URLVariables">URLVariables</abbr></a>
-      	</span>
-      </td>
-      
-      <td class="last">
-		
-			<a href="#decode">
-				<abbr title="URLVariables#decode">
-					decode
-				</abbr>
-			</a>
-		
-        
-      	<span>
-      		()
-      	</span>
-        
-        
-		
-		
+    
 
-		
-      </td>
-      
-      <td>
-      	
-      </td>
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        URLVariables
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    <h4 class="name" id="URLVariables"><span class="type-signature"></span>new URLVariables<span class="signature">(variables)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="url_variables.js.html">url_variables.js</a>, <a href="url_variables.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
     </tr>
+    </thead>
+
+    <tbody>
     
 
-    <tr  class="public">
-      <td class="type">
-      	<span>
-      	
-      	</span>
-      </td>
-      
-      <td class="last">
-		
-			<a href="#toString">
-				<abbr title="URLVariables#toString">
-					toString
-				</abbr>
-			</a>
-		
-        
-      	<span>
-      		()
-      	</span>
-        
-        
-		
-		
+        <tr>
+            
+                <td class="name"><code>variables</code></td>
+            
 
-		
-      </td>
-      
-      <td>
-      	
-      </td>
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Query">Query</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An url string or an object</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="decode"><span class="type-signature"></span>decode<span class="signature">(An)</span><span class="type-signature"> &rarr; {<a href="URLVariables.html">URLVariables</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="url_variables.js.html">url_variables.js</a>, <a href="url_variables.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Converts the url string or object to the specified URLVariables object.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var u = new URLVariables;         u.decode("a=1&amp;b=2&amp;c=3&amp;a=2")         u.decode({a: [1, 2], b: 2, c: 3})</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
     </tr>
+    </thead>
+
+    <tbody>
     
+
+        <tr>
+            
+                <td class="name"><code>An</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Query">Query</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">url string or an object</td>
+        </tr>
+
     
-  </tbody>
+    </tbody>
 </table>
-			
-
-
-			<!-- CLASS EVENTS SUMMARY -->
-			
-
-			<!--
-			################################################################################
-			## DETAILS
-			################################################################################
-			-->
-
-			<!-- CLASS CONSTRUCTOR DETAILS -->
-			<h2>
-				<a name='constructor_details'></a>
-				Constructor details
-				<small><a href="#">Top</a></small>
-				<h3 id="URLVariables"  class="public">
-  
-  <div class="location">
-
-  	<a href="C__Users_145_Documents_GitHub_JS-URL-Variable_src_url_variables_js.html#lineno10">url_variables.js</a> at line 10
-
-  </div>
-	
-	<div class="signature">
-		
-  
-		<strong>URLVariables</strong>
-		
-    <span class="params">
-      (String | Object variables)
-    </span>
-	</div>
-</h3>
 
 
 
 
-<div class="details ">
-	<div class="tags">
-	
-    <!-- PARAMS -->
-    
-    <h4>Parameters</h4>
-    
 
-<table>
-  <tbody>
 
-  
-  <tr>
-    <td class="type">
-			<span>
-				String | Object
-			</span>
-    </td>
-    
-    <td class="last">
-    <a>variables</a><p>An url string or an object</p>
-    </td>
-    
-  
 
-  </tbody>
-</table>
-    
 
-    <!-- RETURN VALUE -->
-    
 
-    <!-- EXCEPTIONS -->
-    
-    
-	</div>
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    this
 </div>
 
-			</h2>
 
 
-			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
-			
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="URLVariables.html">URLVariables</a></span>
 
 
-			<!-- CLASS STATIC METHODS DETAIL -->
-			
+    </dd>
+</dl>
 
-
-			<!-- CLASS PROPERTIES DETAIL -->
-			
-
-
-			<!-- CLASS METHODS DETAIL -->
-			
-			<h2>
-				<a name='methods_details'></a>
-				Methods Detail
-				<small><a href="#">Top</a></small>
-			</h2>
-			<h3 id="decode"  class="public">
-  
-  <div class="location">
-
-  	<a href="C__Users_145_Documents_GitHub_JS-URL-Variable_src_url_variables_js.html#lineno29">url_variables.js</a> at line 29
-
-  </div>
-	
-	<div class="signature">
-		
-	  <span class="virtual">
-	    
-	  </span>
-	  
-	  <span class="scope">
-	    
-	  </span>
-	  
-	  <span class="accesslevel">
-	    public
-	  </span>
-	  
-    <span class="returnvalues">
-      <a href="URLVariables.html" ><abbr title="URLVariables">URLVariables</abbr></a>
-    </span>
-	  
-  
-		<strong>decode</strong>
-		
-    <span class="params">
-      ()
-    </span>
-	</div>
-</h3>
-
-
-<div class="description "><p>Converts the url string to the specified URLVariables object.</p></div>
-
-<div class="details ">
-	<div class="tags">
-	
-    <!-- PARAMS -->
     
 
-    <!-- RETURN VALUE -->
-    
-    <h4>Return Value</h4>
+
+        
+            
+
     
 
-<table>
-  <tbody>
+    <h4 class="name" id="toString"><span class="type-signature"></span>toString<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
 
-  
-  <tr>
-    <td class="type">
-			<span>
-				<a href="URLVariables.html" ><abbr title="URLVariables">URLVariables</abbr></a>
-			</span>
-    </td>
     
-    <td class="last">
-    <p>this</p>
-    </td>
-    
-  
-
-  </tbody>
-</table>
-    
-
-    <!-- EXCEPTIONS -->
-    
-    
-	</div>
-</div>
-<h3 id="toString"  class="public">
-  
-  <div class="location">
-
-  	<a href="C__Users_145_Documents_GitHub_JS-URL-Variable_src_url_variables_js.html#lineno45">url_variables.js</a> at line 45
-
-  </div>
-	
-	<div class="signature">
-		
-	  <span class="virtual">
-	    
-	  </span>
-	  
-	  <span class="scope">
-	    
-	  </span>
-	  
-	  <span class="accesslevel">
-	    public
-	  </span>
-	  
-    <span class="returnvalues">
-      
-    </span>
-	  
-  
-		<strong>toString</strong>
-		
-    <span class="params">
-      ()
-    </span>
-	</div>
-</h3>
 
 
 
 
-<div class="details ">
-	<div class="tags">
-	
-    <!-- PARAMS -->
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="url_variables.js.html">url_variables.js</a>, <a href="url_variables.js.html#line85">line 85</a>
+    </li></ul></dd>
     
 
-    <!-- RETURN VALUE -->
-    
-    <h4>Return Value</h4>
     
 
-<table>
-  <tbody>
-
-  
-  <tr>
-    <td class="type">
-			<span>
-				
-			</span>
-    </td>
-    
-    <td class="last">
-    <p>The string containing all variables, in the MIME content encoding <i>application/x-www-form-urlencoded</i>.</p>
-    </td>
-    
-  
-
-  </tbody>
-</table>
     
 
-    <!-- EXCEPTIONS -->
     
+
     
-	</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The string containing all variables, in the MIME content encoding <i>application/x-www-form-urlencoded</i>.
 </div>
 
-			
 
 
-			<!-- CLASS EVENTS DETAIL -->
-			
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
 
-		</div>
 
-		<footer>
-	Documentation generated by <a href="https://github.com/micmath/jsdoc">JSDoc 3</a> using <a href="https://github.com/danyg/jsdoc3Template">jsdoc3Template</a> by danyg & lechecacharro on Mon Sep 07 2015 13:19:30 GMT+0800 (TST)
+    </dd>
+</dl>
+
+    
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Jun 29 2016 15:47:19 GMT+0800 (台北標準時間) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
-	</body>
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
 </html>
