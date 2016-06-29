@@ -17,15 +17,15 @@ function URLVariables(variables) {
  * Converts the url string or object to the specified URLVariables object.
  * @param {String|Object}	An url string or an object
  * @example var u = new URLVariables;
- *          u.decode("a=1&b=2&c=3&a=2");
- *          u.decode({a: [1, 2], b: 2, c: 3});
+ *          u.decode("a=1&b=2&c=3&a=2")
+ *          u.decode({a: [1, 2], b: 2, c: 3})
  * @return {URLVariables}	this
  */
 URLVariables.prototype.decode = function (source) {
 	switch (typeof source) {
 		case "string":
-			var url = source.split("?");
-			var urlvar = url[url.length-1].split("&");
+			var url = source.split("?")
+			var urlvar = url[url.length-1].split("&")
 			for (var i in urlvar) {
 				var data = urlvar[i].split("=")
 				var name = decodeURIComponent(data[0]), value = decodeURIComponent(data[1])
@@ -36,7 +36,7 @@ URLVariables.prototype.decode = function (source) {
 					this[name] = [value]
 					
 				}else{
-					this[name].push(value);
+					this[name].push(value)
 				}
 			}
 			break
@@ -51,7 +51,7 @@ URLVariables.prototype.decode = function (source) {
 				}
 				
 				if (source[i] instanceof Array) {
-					[].push.apply(this[i], source[i]);
+					[].push.apply(this[i], source[i])
 				}else{
 					this[i].push(source[i])
 				}
