@@ -5,12 +5,15 @@
  
 /**
  * A query string or an object
+ * @example "a=1&b=2&c=3"
+ * @example {"a":1, "b":2, "c":3}
+ * @example {"a":[1, 2], "b":2, "c":3}
  * @typedef {(String|Object)} Query
  */
 
 /**
  * @constructor
- * @param variables {Query} An url string or an object
+ * @param variables {Query}
  */
 function URLVariables(variables) {
 	if (!(this instanceof URLVariables)) {
@@ -18,13 +21,18 @@ function URLVariables(variables) {
 	}
 	this.decode(variables)
 }
+
 /**
  * Converts the url string or object to the specified URLVariables object.
  * @param {Query}	An url string or an object
- * @example var u = new URLVariables;
- *          u.decode("a=1&b=2&c=3&a=2")
- *          u.decode({a: [1, 2], b: 2, c: 3})
  * @return {URLVariables}	this
+ * 
+ * @example 
+ * var u = new URLVariables;
+ * u.decode("a=1&b=2&c=3&a=2")	// u will be {"a":["1","2"],"b":["2"],"c":["3"]}
+ * @example 
+ * var u = new URLVariables;
+ * u.decode({a: [1, 2], b: 2, c: 3})	// u will be {"a":["1","2"],"b":["2"],"c":["3"]}
  */
 URLVariables.prototype.decode = function (source) {
 	switch (typeof source) {
