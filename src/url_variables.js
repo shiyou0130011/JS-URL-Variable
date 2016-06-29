@@ -4,13 +4,13 @@
  */
  
 /**
+ * @typedef {(String|Object)} Query
  * A query string, an url or an object
  * @example "a=1&b=2&c=3"	// query string
  * @example {"a":1, "b":2, "c":3}	// object
  * @example {"a":[1, 2], "b":2, "c":3}	// object
  * @example "http://example.com"	// an url without queries
  * @example "http://example.com?a=1&b=2&c=3"	// an url with queries
- * @typedef {(String|Object)} Query
  */
 
 /**
@@ -26,7 +26,7 @@ function URLVariables(variables) {
 
 /**
  * Converts the url string or object to the specified URLVariables object.
- * @param {Query}	An url string or an object
+ * @param {Query}
  * @return {URLVariables}	this
  * 
  * @example 
