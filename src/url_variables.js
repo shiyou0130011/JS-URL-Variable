@@ -3,10 +3,15 @@
  * @version 1.1
  * @license Apache-2.0
  */
+ 
+/**
+ * A query string or an object
+ * @typedef {(String|Object)} Query
+ */
 
 /**
  * @constructor
- * @param variables {String|Object} An url string or an object
+ * @param variables {Query} An url string or an object
  */
 function URLVariables(variables) {
 	if (!(this instanceof URLVariables)) {
@@ -16,7 +21,7 @@ function URLVariables(variables) {
 }
 /**
  * Converts the url string or object to the specified URLVariables object.
- * @param {String|Object}	An url string or an object
+ * @param {Query}	An url string or an object
  * @example var u = new URLVariables;
  *          u.decode("a=1&b=2&c=3&a=2")
  *          u.decode({a: [1, 2], b: 2, c: 3})
