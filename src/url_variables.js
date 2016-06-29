@@ -25,15 +25,24 @@ URLVariables.prototype.decode = function (source) {
 	switch (typeof source) {
 		case "string":
 			var url = source
+			var urlvar 
 			if(url.indexOf("?") >= 0){
 				url = url.substr(url.indexOf("?") + 1) 
+			}else if(url.indexOf("=") < 0){
+				url = ""
 			}
 			
-			var urlvar = url[url.length-1].split("&")
+			if(url.length > 0){
+				urlvar = url[url.length-1].split("&")
+			}else{
+				urlvar = {}
+			}
+			
+			
 			for (var i in urlvar) {
 				var data = urlvar[i].split("=")
-				var name = decodeURIComponent(data[0]), 
-				value = decodeURIComponent(data[1])
+				var name = data[0] === undefined? "": decodeURIComponent(data[0]), 
+				    value = data[1] === undefined? "": decodeURIComponent(data[1])
 				if (!(this[name] instanceof Array)) {
 					if (this[name]) {
 						this[name] = [this[name]]
