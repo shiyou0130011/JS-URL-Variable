@@ -39,7 +39,7 @@ function URLVariables(variables) {
 URLVariables.prototype.decode = function (source) {
 	switch (typeof source) {
 		case "string":
-			var url = source
+			var url = source.split("#")[0]
 			var urlvar 
 			if(url.indexOf("?") >= 0){
 				url = url.substr(url.indexOf("?") + 1) 
